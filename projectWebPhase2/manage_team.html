@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Team Members - Yamam Spa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="top-bar">
+      <div class="logo">
+        <img src="logo.jpg" alt="Yamam Spa Logo">
+      </div>
+      <span class="logo-text">YAMAM SPA</span>
+      <div class="header-buttons">
+        <a href="#" class="btn-outline">Log in</a>
+        <a href="#" class="btn-filled">Set up my business</a>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="dashboard.html" class="active">Service Provider</a></li>
+        <li><a href="customer.html">Customer</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="beautylab.html">The Beauty Lab</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumbs">Home › Dashboard › Manage Team Members</div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="headline">
+      <div class="headline-text">
+        <h2>Manage Team Members</h2>
+        <p>View, select, and update your spa’s talented staff members.</p>
+      </div>
+    </section>
+
+    <section class="form-panel" style="max-width:900px; margin:auto;">
+      <form id="team-form" action="#" method="post" novalidate>
+        <p class="small">Select team members and choose an action below.</p>
+
+        <div class="team-grid" style="display:flex; flex-wrap:wrap; gap:15px; justify-content:center;">
+          <!-- Team Member 1 -->
+          <label class="team-member">
+            <input type="checkbox" name="staff[]" value="Leslie" aria-label="Select Asmaa">
+            <img src="specialist1.PNG" alt="Leslie photo">
+            <div>
+              <div style="font-weight:700;">Leslie</div>
+              <div class="small">Senior Nails Specialist</div>
+            </div>
+          </label>
+
+          <!-- Team Member 2 -->
+          <label class="team-member">
+            <input type="checkbox" name="staff[]" value="Juvelyn" aria-label="Select Noura">
+            <img src="specialist2.PNG" alt="Juvelyn photo">
+            <div>
+              <div style="font-weight:700;">Juvelyn</div>
+              <div class="small">Senior Massage Therapist</div>
+            </div>
+          </label>
+
+          <!-- Team Member 3 -->
+          <label class="team-member">
+            <input type="checkbox" name="staff[]" value="Mae" aria-label="Select Layla">
+            <img src="specialist3.PNG" alt="Mae photo">
+            <div>
+              <div style="font-weight:700;">Mae</div>
+              <div class="small">Junior Massage & Nails Specialist</div>
+            </div>
+          </label>
+        </div>
+
+        <div style="display:flex; gap:8px; margin-top:20px; justify-content:flex-end;">
+          <button type="submit" name="action" value="delete" class="button button-delete">Delete</button>
+          <button type="submit" name="action" value="add" class="button button-add">Add</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <h3>YAMAM SPA</h3>
+      <p>Your sanctuary for relaxation, beauty, and wellness. Indulge in massages, facials, hair care, and makeup services designed to refresh your mind and body.</p>
+    </div>
+    <div class="footer-right">
+      <h4>Contact Us</h4>
+      <ul>
+        <li>Email: info@yamamspa.com</li>
+        <li>Phone: +966 555 123 456</li>
+        <li>Address: Riyadh, Saudi Arabia</li>
+      </ul>
+    </div>
+    <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
