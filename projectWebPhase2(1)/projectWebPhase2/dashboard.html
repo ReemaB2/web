@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provider Dashboard - Yamam Spa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <!-- Header -->
+<header class="main-header">
+    <div class="top-bar">
+        <div class="logo">
+            <a href="index.html"><img src="logo.jpg" alt="Yamam Spa Logo"></a>
+        </div>
+        <span class="logo-text">YAMAM SPA</span>
+        <div class="header-buttons">
+            
+            <a href="about.html" class="btn-filled">Join Now</a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="dashboard.html" class="active">Service Provider</a></li>
+        <li><a href="customer.html">Customer</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="beautylab.html">The Beauty Lab</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumbs">Home › Provider Dashboard</div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="headline">
+      <div class="headline-text">
+        <h2>Provider Dashboard</h2>
+        <p>Manage your services, team, and offers — all in one place with Yamam Spa.</p>
+      </div>
+    </section>
+
+    <section style="text-align:center; padding:30px 20px;">
+      <h2>Quick Links</h2>
+      <div class="dashboard-links" style="display:flex; flex-wrap:wrap; gap:15px; justify-content:center;">
+        <a class="link-card btn-filled" href="add_service.html">+ Add New Service</a>
+        <a class="link-card btn-outline" href="manage_team.html">Manage Team Members</a>
+        <a class="link-card btn-outline" href="services.html">View All Services</a>
+      </div>
+    </section>
+
+    <section class="form-panel" style="margin-top:30px;">
+      <h2 style="text-align:center;">All Provided Services</h2>
+
+      <div style="display:flex; flex-direction:column; gap:15px; margin-top:20px;">
+        <!-- Example Service Row -->
+        <div style="display:flex; gap:12px; align-items:center; border-bottom:1px solid #eee; padding-bottom:10px;">
+          <img src="massage.jpg" alt="Massage Service" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">
+          <div style="flex:1;">
+            <div style="font-weight:700;">Relaxing Massage</div>
+            <div class="small">Relaxing 60-minute Massage</div>
+          </div>
+          <div style="width:120px; text-align:right; font-weight:700;">SAR 230</div>
+          <div style="display:flex; gap:8px;">
+            <a href="edit_service.html" class="small">Edit</a>
+            <a href="#" class="small">Disable</a>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px; align-items:center; border-bottom:1px solid #eee; padding-bottom:10px;">
+          <img src="nails.png" alt="Manicure Pedicure" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">
+          <div style="flex:1;">
+            <div style="font-weight:700;">Manicure & Pedicure</div>
+            <div class="small">Deep clean manicure and pedicurex</div>
+          </div>
+          <div style="width:120px; text-align:right; font-weight:700;">SAR 250</div>
+          <div style="display:flex; gap:8px;">
+            <a href="edit_service.html" class="small">Edit</a>
+            <a href="#" class="small">Disable</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <h3>YAMAM SPA</h3>
+      <p>Your sanctuary for relaxation, beauty, and wellness. Indulge in massages, facials, hair care, and makeup services designed to refresh your mind and body.</p>
+    </div>
+    <div class="footer-right">
+      <h4>Contact Us</h4>
+      <ul>
+        <li>Email: info@yamamspa.com</li>
+        <li>Phone: +966 555 123 456</li>
+        <li>Address: Riyadh, Saudi Arabia</li>
+      </ul>
+    </div>
+    <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
