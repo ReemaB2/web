@@ -125,12 +125,17 @@
       line-height: 1.7;
     }
 
-    /* --- Filter Dropdown --- */
+    /* --- Filter Dropdown (HTML-only) --- */
     .filter-wrapper {
       display: flex;
       justify-content: flex-start;
       position: relative;
       margin: 0 0 20px 40px;
+    }
+
+    /* hide checkbox */
+    #filterToggle {
+      display: none;
     }
 
     .filter-btn {
@@ -140,7 +145,7 @@
       font-weight: 600;
       border-radius: 25px;
       padding: 8px 16px;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -151,6 +156,7 @@
       color: white;
     }
 
+    /* dropdown */
     .filter-dropdown {
       display: none;
       position: absolute;
@@ -163,23 +169,34 @@
       z-index: 10;
       overflow: hidden;
       width: 190px;
+      padding: 10px 0;
     }
 
-    .filter-dropdown button {
+    /* when checkbox checked */
+    #filterToggle:checked + label + .filter-dropdown {
       display: block;
-      width: 100%;
-      background: none;
-      border: none;
-      text-align: left;
+    }
+
+    .filter-dropdown label {
+      display: block;
       padding: 10px 15px;
-      font-size: 0.95rem;
-      color: var(--sage-dark);
       cursor: pointer;
+      color: var(--sage-dark);
+      font-size: 0.95rem;
       transition: background 0.2s ease;
     }
 
-    .filter-dropdown button:hover {
+    .filter-dropdown label:hover {
       background: #f5f5f5;
+    }
+
+    .filter-dropdown input[type="radio"] {
+      display: none;
+    }
+
+    .filter-dropdown input[type="radio"]:checked + label {
+      background: var(--sage-dark);
+      color: #fff;
     }
   </style>
 </head>
@@ -221,14 +238,23 @@
       </div>
     </section>
 
-    <!-- Filter Compact Section -->
+    <!-- Filter Section (HTML-only) -->
     <div class="filter-wrapper">
-      <button class="filter-btn" id="filterToggle">Filter</button>
-      <div class="filter-dropdown" id="filterDropdown">
-        <button data-filter="price-low">Price: Low to High</button>
-        <button data-filter="price-high">Price: High to Low</button>
-        <button data-filter="az">A → Z</button>
-        <button data-filter="za">Z → A</button>
+      <input type="checkbox" id="filterToggle">
+      <label for="filterToggle" class="filter-btn">Filter</label>
+
+      <div class="filter-dropdown">
+        <input type="radio" id="price-low" name="filter">
+        <label for="price-low">Price: Low to High</label>
+
+        <input type="radio" id="price-high" name="filter">
+        <label for="price-high">Price: High to Low</label>
+
+        <input type="radio" id="az" name="filter">
+        <label for="az">A → Z</label>
+
+        <input type="radio" id="za" name="filter">
+        <label for="za">Z → A</label>
       </div>
     </div>
 
@@ -293,46 +319,5 @@
     <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
   </footer>
 
-  <!-- Filter Script -->
-  <script>
-    const filterBtn = document.getElementById('filterToggle');
-    const dropdown = document.getElementById('filterDropdown');
-    const servicesGrid = document.getElementById('servicesGrid');
-    const cards = Array.from(servicesGrid.children);
-
-    // Toggle dropdown visibility
-    filterBtn.addEventListener('click', () => {
-      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.filter-wrapper')) dropdown.style.display = 'none';
-    });
-
-    // Sort logic
-    dropdown.querySelectorAll('button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        let sortedCards = [...cards];
-        const filter = btn.dataset.filter;
-
-        if (filter === 'price-low') {
-          sortedCards.sort((a, b) => a.dataset.price - b.dataset.price);
-        } else if (filter === 'price-high') {
-          sortedCards.sort((a, b) => b.dataset.price - a.dataset.price);
-        } else if (filter === 'az') {
-          sortedCards.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
-        } else if (filter === 'za') {
-          sortedCards.sort((a, b) => b.dataset.name.localeCompare(a.dataset.name));
-        }
-
-        servicesGrid.innerHTML = '';
-        sortedCards.forEach(card => servicesGrid.appendChild(card));
-        dropdown.style.display = 'none';
-      });
-    });
-  </script>
-
 </body>
 </html>
-
