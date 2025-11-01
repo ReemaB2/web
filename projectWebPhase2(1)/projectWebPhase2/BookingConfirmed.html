@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation - Yamam Spa</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --sage-green: #6b8b75;
+      --sage-dark: #56745e;
+    }
+
+    body {
+      background-color: #f8f9f8;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+    }
+
+    .confirmation-box {
+      max-width: 600px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      margin: 80px auto;
+      padding: 40px;
+    }
+
+    .confirmation-box h2 {
+      color: var(--sage-dark);
+      margin-bottom: 15px;
+    }
+
+    .confirmation-box p {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    .btn-filled {
+      background-color: var(--sage-dark);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-filled:hover {
+      background-color: var(--sage-green);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="main-header">
+    <div class="top-bar">
+        <div class="logo">
+            <a href="index.html"><img src="logo.jpg" alt="Yamam Spa Logo"></a>
+        </div>
+        <span class="logo-text">YAMAM SPA</span>
+        <div class="header-buttons">
+            
+            <a href="about.html" class="btn-filled">Join Now</a>
+        </div>
+    </div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="dashboard.html">Service Provider</a></li>
+      <li><a href="Customer.html">Customer</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="Quiz.html">The Beauty Lab</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Confirmation Message -->
+<div class="confirmation-box">
+  <h2> Your Booking is Confirmed!</h2>
+  <p>Thank you for booking with <strong>Yamam Spa</strong>. We’re looking forward to serving you soon!</p>
+  <a href="index.html" class="btn-filled">OK</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-left">
+    <h3>YAMAM SPA</h3>
+    <p>Your sanctuary for relaxation, beauty, and wellness.</p>
+  </div>
+  <div class="footer-right">
+    <h4>Contact Us</h4>
+    <ul>
+      <li>Email: info@yamamspa.com</li>
+      <li>Phone: +966 555 123 456</li>
+      <li>Address: Riyadh, Saudi Arabia</li>
+    </ul>
+  </div>
+  <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
