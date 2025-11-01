@@ -10,99 +10,88 @@
 
 <!-- Header -->
 <header class="main-header">
-    <div class="top-bar">
-        <div class="logo">
-            <a href="index.html"><img src="logo.jpg" alt="Yamam Spa Logo"></a>
-        </div>
-        <span class="logo-text">YAMAM SPA</span>
-        <div class="header-buttons">
-            
-            <a href="about.html" class="btn-filled">Join Now</a>
-        </div>
+  <div class="top-bar">
+    <div class="logo">
+      <a href="index.html"><img src="logo.jpg" alt="Yamam Spa Logo"></a>
     </div>
-
+    <span class="logo-text">YAMAM SPA</span>
+    <div class="header-buttons">
+      <a href="Customer.html" class="btn-outline">Back</a>
+    </div>
+  </div>
 
   <nav class="navbar">
     <ul>
-      <li><a href="dashboard.html">Service Provider</a></li>
-      <li><a href="customer.html" class="active">Customer</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="#">The Beauty Lab</a></li>
-      <li><a href="about.html">About Us</a></li>
+                <li><a href="dashboard.html">Service Provider</a></li>
+                <li><a href="Customer.html">Customer</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Quiz.html">The Beauty Lab</a></li>
+                <li><a href="about.html">About Us</a></li>
     </ul>
   </nav>
 </header>
 
 <!-- Breadcrumb -->
-<div class="breadcrumbs">Customer › My Order › Previous Orders</div>
+<div class="breadcrumbs">Customer › Previous Orders</div>
 
 <!-- Main Content -->
 <main class="main-content">
   <section class="headline" style="text-align:center;">
-    <div class="headline-text">
-      <h2>Previous Orders</h2>
-      <p>Here you can view your previous service orders and evaluate them.</p>
-    </div>
+    <h2>Previous Orders</h2>
+    <p>Here you can review your completed services and evaluate your experience.</p>
   </section>
 
-  <section class="form-panel" style="max-width:800px; margin:auto; text-align:center;">
-    
-    <!-- Order Card 1 -->
-    <div style="border:1px solid #ccc; border-radius:10px; padding:15px; margin-bottom:15px; display:flex; align-items:center; justify-content:space-between;">
+  <section style="max-width:900px; margin:auto;">
+
+    <!-- Relaxing Massage -->
+    <div style="border:1px solid #ccc; border-radius:10px; padding:15px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; background-color:#f9f9f9;">
       <div style="display:flex; align-items:center; gap:15px;">
-        <img src="default-service.jpg" alt="Service Image" style="width:80px; height:80px; border-radius:8px;">
+        <img src="serviceMAS.jpg" alt="Massage Image" style="width:100px; height:100px; border-radius:10px; object-fit:cover;">
         <div style="text-align:left;">
           <p><strong>Service Name:</strong> Relaxing Massage</p>
-          <p><strong>Date of Order:</strong> 12-10-2025</p>
+          <p><strong>Date of Order:</strong> October 12, 2025</p>
           <p><strong>Status:</strong> Completed</p>
           <p><strong>Price:</strong> 230 SAR</p>
         </div>
       </div>
       <div>
-        <a href="evaluation.html" class="btn-outline">Evaluate</a>
+        <a href="evaluation_massage.html" class="btn-filled">Evaluate</a>
       </div>
     </div>
 
-    <!-- Order Card 2 -->
-    <div style="border:1px solid #ccc; border-radius:10px; padding:15px; margin-bottom:15px; display:flex; align-items:center; justify-content:space-between;">
+    <!--  Facial Treatment -->
+    <div style="border:1px solid #ccc; border-radius:10px; padding:15px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; background-color:#f9f9f9;">
       <div style="display:flex; align-items:center; gap:15px;">
-        <img src="default-service.jpg" alt="Service Image" style="width:80px; height:80px; border-radius:8px;">
+        <img src="serviceFace.jpg" alt="Facial Image" style="width:100px; height:100px; border-radius:10px; object-fit:cover;">
         <div style="text-align:left;">
           <p><strong>Service Name:</strong> Facial Treatment</p>
-          <p><strong>Date of Order:</strong> 20-09-2025</p>
+          <p><strong>Date of Order:</strong> September 20, 2025</p>
           <p><strong>Status:</strong> Completed</p>
           <p><strong>Price:</strong> 180 SAR</p>
         </div>
       </div>
       <div>
-        <a href="evaluation.html" class="btn-outline">Evaluate</a>
+        <a href="evaluation_facial.html" class="btn-filled">Evaluate</a>
       </div>
     </div>
 
-    <!-- Order Card 3 -->
-    <div style="border:1px solid #ccc; border-radius:10px; padding:15px; margin-bottom:15px; display:flex; align-items:center; justify-content:space-between;">
+    <!-- Manicure & Pedicure -->
+    <div style="border:1px solid #ccc; border-radius:10px; padding:15px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; background-color:#f9f9f9;">
       <div style="display:flex; align-items:center; gap:15px;">
-        <img src="default-service.jpg" alt="Service Image" style="width:80px; height:80px; border-radius:8px;">
+        <img src="serviceNails.jpg" alt="Nails Image" style="width:100px; height:100px; border-radius:10px; object-fit:cover;">
         <div style="text-align:left;">
           <p><strong>Service Name:</strong> Manicure & Pedicure</p>
-          <p><strong>Date of Order:</strong> 02-09-2025</p>
+          <p><strong>Date of Order:</strong> September 2, 2025</p>
           <p><strong>Status:</strong> Completed</p>
           <p><strong>Price:</strong> 250 SAR</p>
         </div>
       </div>
       <div>
-        <a href="evaluation.html" class="btn-outline">Evaluate</a>
+        <a href="evaluation_nails.html" class="btn-filled">Evaluate</a>
       </div>
     </div>
 
-    <div style="margin-top:25px;">
-      <a href="request_service.html" class="btn-filled">Add Service</a>
-    </div>
-
   </section>
-
-  <!-- فراغ قبل الفوتر -->
-  <div style="height:80px;"></div>
 </main>
 
 <!-- Footer -->
@@ -124,3 +113,4 @@
 
 </body>
 </html>
+

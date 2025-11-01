@@ -612,6 +612,115 @@ textarea {
     text-align: center;
 }
 
+/* ======== beauty lab Section ======== */
+.headlineQuiz {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 40px 20px;
+}
+
+.headline-Quiz {  
+    width: 60%;    
+}
+
+.headline-Quiz h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.headline-Quiz p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.Quizimge {
+    width: 30%;   
+}
+
+.Quizimge img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+}.quiz {
+    max-width: 900px;       
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f7f3f0;
+    border-radius: 10px;
+}
+
+fieldset {
+    border: 2px solid #6b9c7d;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 18px;
+    color: #6b9c7d;
+    padding: 0 10px;
+}
+
+/* quiz row */
+.quiz-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.quiz-question {
+    width: 50%;
+    font-weight: bold;
+}
+
+.quiz-options {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz-options label {
+    text-align: center;
+    font-size: 14px;
+}
+
+.quiz-options input {
+    display: block;
+    margin: 5px auto 0 auto;
+}
+
+.quiz-submit {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 25px;
+    background-color: #6b9c7d;
+    color: white;
+    border: 1px solid #6b9c7d;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* legend row styling */
+.quiz-legend .quiz-question {
+    font-weight: normal;
+}
+.quiz-legend .quiz-options span {
+    text-align: center;
+    width: 80px;     display: inline-block;
+    font-weight: normal;
+    color: #555;
+}
+.quiz-note {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/*============================*/
 .footer-note {
     margin-top: 20px;
     text-align: center;
