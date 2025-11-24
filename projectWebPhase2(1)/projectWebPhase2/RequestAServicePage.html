@@ -96,6 +96,91 @@
   </div>
   <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
 </footer>
+<script>
+  const form = document.querySelector("form");
+  const nameInput = document.getElementById("name");
+  const phoneInput = document.getElementById("phone");
+  const dateInput = document.getElementById("date");
+  const timeInput = document.getElementById("time");
+  const serviceInput = document.getElementById("service");
+  const descriptionInput = document.getElementById("description");
+
+  // مكان عرض الطلبات بعد الإضافة
+  const requestsContainer = document.createElement("div");
+  requestsContainer.style.marginTop = "30px";
+  document.querySelector(".form-panel").appendChild(requestsContainer);
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // 1) التحقق من الاسم
+    if (nameInput.value.trim() === "") {
+      alert("Please enter your name.");
+      return;
+    }
+
+    // 2) التحقق من رقم الهاتف
+    const phonePattern = /^05\d{8}$/;
+    if (!phonePattern.test(phoneInput.value)) {
+      alert("Phone number must start with 05 and be 10 digits.");
+      return;
+    }
+
+    // 3) التحقق من التاريخ
+    const today = new Date().toISOString().split("T")[0];
+    if (dateInput.value < today) {
+      alert("Please choose a valid date.");
+      return;
+    }
+
+    // 4) التحقق من الوقت
+    if (timeInput.value === "") {
+      alert("Please select a time.");
+      return;
+    }
+
+    // 5) التحقق من نوع الخدمة
+    if (serviceInput.value === "") {
+      alert("Please select a service.");
+      return;
+    }
+
+    // 6) التحقق من وصف 100 كلمة
+    const words = descriptionInput.value.trim().split(/\s+/);
+    if (words.length < 100) {
+      alert("Description must be at least 100 words.");
+      return;
+    }
+
+    // 7) تنبيه البقاء أو المغادرة
+    const action = confirm("Your request has been added!\n\nPress OK to go to the dashboard or Cancel to stay here.");
+
+    if (action) {
+      // يروح للداشبورد
+      window.location.href = "dashboard.html";
+    } else {
+      // يبقى في الصفحة — يطبع الطلب
+      const newRequest = document.createElement("div");
+      newRequest.style.border = "1px solid #ccc";
+      newRequest.style.padding = "15px";
+      newRequest.style.borderRadius = "10px";
+      newRequest.style.marginTop = "10px";
+      newRequest.style.backgroundColor = "#f9f9f9";
+
+      newRequest.innerHTML = `
+        <h3>${serviceInput.options[serviceInput.selectedIndex].text}</h3>
+        <p><strong>Date:</strong> ${dateInput.value}</p>
+        <p><strong>Time:</strong> ${timeInput.value}</p>
+        <p><strong>Description:</strong> ${descriptionInput.value}</p>
+      `;
+
+      requestsContainer.appendChild(newRequest);
+
+      // مسح الفورم بعد الإضافة
+      form.reset();
+    }
+  });
+</script>
 
 </body>
 </html>
