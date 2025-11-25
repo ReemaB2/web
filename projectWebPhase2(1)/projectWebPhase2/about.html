@@ -72,7 +72,7 @@
 <!-- Join the Team Form -->
 <section class="join-section">
     <h2>Join Our Staff Team</h2>
-    <form class="join-form">
+    <form class="join-form" id="joinForm">
         <label for="name">Full Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -119,6 +119,52 @@
     </div>
     <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
 </footer>
+
+<!-- JavaScript Validation -->
+<script>
+document.getElementById("joinForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let photo = document.getElementById("photo").files[0];
+    let dob = document.getElementById("dob").value;
+    let email = document.getElementById("email").value.trim();
+    let expertise = document.getElementById("expertise").value.trim();
+    let skills = document.getElementById("skills").value.trim();
+    let education = document.getElementById("education").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    
+    if (!name || !photo || !dob || !email || !expertise || !skills || !education || !message) {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    
+    if (/^[0-9]/.test(name)) {
+        alert("Name cannot start with a number.");
+        return;
+    }
+
+  
+    if (!photo.type.startsWith("image/")) {
+        alert("Photo must be an image file.");
+        return;
+    }
+
+  
+    let maxDOB = new Date("2008-12-31");
+    let userDOB = new Date(dob);
+
+    if (userDOB > maxDOB) {
+        alert("DOB must not be after 2008.");
+        return;
+    }
+
+   
+    alert("Form submitted successfully! Welcome " + name + "!");
+});
+</script>
 
 </body>
 </html>
