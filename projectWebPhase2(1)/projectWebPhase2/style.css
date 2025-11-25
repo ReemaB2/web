@@ -815,3 +815,93 @@ button:hover {
 .theme-toggle:hover {
   transform: scale(1.07);
 }
+/* ====================================
+الوضع الليلي
+====================================== */
+.dark-theme body {
+    background-color: #1c1f1d !important;
+    color: #f3f3f3 !important;
+}
+
+/* نصوص */
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme p,
+.dark-theme label,
+.dark-theme span,
+.dark-theme li,
+.dark-theme a {
+    color: #e8e8e8 !important;
+}
+
+/* خلفيات الكروت والصناديق */
+.dark-theme .service-card,
+.dark-theme .journal-card,
+.dark-theme .review-card,
+.dark-theme .profile-table,
+.dark-theme .team-member,
+.dark-theme .form-panel,
+.dark-theme .join-form,
+.dark-theme .link-card,
+.dark-theme .quiz,
+.dark-theme fieldset,
+.dark-theme .card {
+    background-color: #2a2d2b !important;
+    border-color: #444 !important;
+}
+
+/* الأقسام ذات الخلفيات الفاتحة */
+.dark-theme .about-intro,
+.dark-theme .team-section,
+.dark-theme .join-section,
+.dark-theme .profile-section {
+    background-color: #232523 !important;
+}
+
+/* الأقسام ذات خلفية خاصة */
+.dark-theme .reviews {
+    background-color: #2a2826 !important;
+}
+
+/* هوامش ولون الحدود */
+.dark-theme hr,
+.dark-theme .breadcrumbs,
+.dark-theme .footer-note {
+    border-color: #555 !important;
+    color: #bbb !important;
+}
+
+/* الروابط */
+.dark-theme a:hover {
+    color: #8bc9a5 !important;
+}
+
+/* الأزرار */
+.dark-theme button,
+.dark-theme .btn-filled,
+.dark-theme .button-add {
+    background-color: #6dbb94 !important;
+    border-color: #6dbb94 !important;
+    color: white !important;
+}
+
+.dark-theme .btn-outline {
+    border-color: #555 !important;
+    color: #6dbb94 !important;
+}
+
+/* الهيدر والفوتر */
+.dark-theme header,
+.dark-theme footer,
+.dark-theme .navbar {
+    background-color: #1f2220 !important;
+    border-color: #333 !important;
+}
+
+.dark-theme .navbar a {
+    background-color: transparent !important;
+    color: #eee !important;
+}
