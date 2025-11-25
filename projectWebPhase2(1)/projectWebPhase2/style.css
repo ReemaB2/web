@@ -858,7 +858,7 @@ button:hover {
 .dark-theme .team-section,
 .dark-theme .join-section,
 .dark-theme .profile-section {
-    background-color: #232523 !important;
+    background-color: #3d4a3d !important;
 }
 
 /* الأقسام ذات خلفية خاصة */
@@ -905,3 +905,4 @@ button:hover {
     background-color: transparent !important;
     color: #eee !important;
 }
+
