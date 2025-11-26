@@ -8,7 +8,7 @@
 </head>
 <body>
 
- <!-- Header -->
+<!-- Header -->
 <header class="main-header">
     <div class="top-bar">
         <div class="logo">
@@ -16,27 +16,25 @@
         </div>
         <span class="logo-text">YAMAM SPA</span>
         <div class="header-buttons">
-            
             <a href="about.html" class="btn-filled">Join Now</a>
         </div>
     </div>
 
     <nav class="navbar">
       <ul>
-                <li><a href="dashboard.html">Service Provider</a></li>
-                <li><a href="Customer.html">Customer</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="Quiz.html">The Beauty Lab</a></li>
-                <li><a href="about.html">About Us</a></li>
+        <li><a href="dashboard.html">Service Provider</a></li>
+        <li><a href="Customer.html">Customer</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Quiz.html">The Beauty Lab</a></li>
+        <li><a href="about.html">About Us</a></li>
       </ul>
     </nav>
-  </header>
+</header>
 
-  <!-- Breadcrumb -->
-  <div class="breadcrumbs">Home › Provider Dashboard › Edit Service</div>
+<!-- Breadcrumb -->
+<div class="breadcrumbs">Home › Provider Dashboard › Edit Service</div>
 
-  <!-- Main Content -->
-  <main class="main-content">
+<main class="main-content">
     <section class="headline">
       <div class="headline-text">
         <h2>Edit Service</h2>
@@ -47,70 +45,16 @@
     <section class="form-panel">
       <h2 style="text-align:center;">Edit Existing Services</h2>
 
-      <!-- Relaxing Massage -->
-      <div class="edit-service-panel">
-        <h3>Relaxing Massage</h3>
-        <form class="edit-service-form">
-          <div class="form-row">
-            <label for="massage-name">Service Name</label>
-            <input type="text" id="massage-name" value="Relaxing Massage">
-          </div>
-          <div class="form-row">
-            <label for="massage-desc">Description</label>
-            <textarea id="massage-desc">Relaxing 60-minute Massage</textarea>
-          </div>
-          <div class="form-row">
-            <label for="massage-price">Price (SAR)</label>
-            <input type="number" id="massage-price" value="230">
-          </div>
-          <div class="form-row">
-            <label for="massage-img">Image URL</label>
-            <input type="text" id="massage-img" value="massage.jpg">
-          </div>
-          <div class="form-row" style="justify-content:center;">
-            <button type="submit" class="button button-add">Save Changes</button>
-            <button type="button" class="button button-delete">Delete Service</button>
-          </div>
-        </form>
+      <div id="edit-services-container" style="display:flex; flex-direction:column; gap:20px; margin-top:20px;">
+        <!-- Forms will be generated here -->
       </div>
-
-      <hr>
-
-      <!-- Manicure & Pedicure -->
-      <div class="edit-service-panel">
-        <h3>Manicure & Pedicure</h3>
-        <form class="edit-service-form">
-          <div class="form-row">
-            <label for="nails-name">Service Name</label>
-            <input type="text" id="nails-name" value="Manicure & Pedicure">
-          </div>
-          <div class="form-row">
-            <label for="nails-desc">Description</label>
-            <textarea id="nails-desc">Deep clean manicure and pedicure</textarea>
-          </div>
-          <div class="form-row">
-            <label for="nails-price">Price (SAR)</label>
-            <input type="number" id="nails-price" value="250">
-          </div>
-          <div class="form-row">
-            <label for="nails-img">Image URL</label>
-            <input type="text" id="nails-img" value="nails.png">
-          </div>
-          <div class="form-row" style="justify-content:center;">
-            <button type="submit" class="button button-add">Save Changes</button>
-            <button type="button" class="button button-delete">Delete Service</button>
-          </div>
-        </form>
-      </div>
-
     </section>
-  </main>
+</main>
 
-  <!-- Footer -->
-  <footer>
+<footer>
     <div class="footer-left">
       <h3>YAMAM SPA</h3>
-      <p>Your sanctuary for relaxation, beauty, and wellness. Indulge in massages, facials, hair care, and makeup services designed to refresh your mind and body.</p>
+      <p>Your sanctuary for relaxation, beauty, and wellness.</p>
     </div>
     <div class="footer-right">
       <h4>Contact Us</h4>
@@ -121,8 +65,91 @@
       </ul>
     </div>
     <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
-  </footer>
-  <script defer src="theme.js"></script>
+</footer>
+
+<script>
+// ==============================
+// LOAD SERVICES FOR EDITING
+// ==============================
+function loadEditServices() {
+    const container = document.getElementById("edit-services-container");
+    let services = JSON.parse(localStorage.getItem("yamam_services")) || [];
+
+    container.innerHTML = "";
+
+    if(services.length === 0){
+        container.innerHTML = `<p style="text-align:center; font-size:18px;">No services found. <a href="add_service.html">Add a service first.</a></p>`;
+        return;
+    }
+
+    services.forEach((service, index) => {
+        const div = document.createElement("div");
+        div.classList.add("edit-service-panel");
+
+        div.innerHTML = `
+            <h3>${service.name}</h3>
+            <form class="edit-service-form">
+              <div class="form-row">
+                <label>Service Name</label>
+                <input type="text" name="name" value="${service.name}" required>
+              </div>
+              <div class="form-row">
+                <label>Description</label>
+                <textarea name="desc" required>${service.description}</textarea>
+              </div>
+              <div class="form-row">
+                <label>Price (SAR)</label>
+                <input type="number" name="price" value="${service.price}" min="0" step="0.01" required>
+              </div>
+              <div class="form-row">
+                <label>Image URL</label>
+                <input type="text" name="photo" value="${service.photo}" required>
+              </div>
+              <div class="form-row" style="justify-content:center; gap:8px;">
+                <button type="submit" class="button button-add">Save Changes</button>
+                <button type="button" class="button button-delete" data-index="${index}">Delete Service</button>
+              </div>
+            </form>
+            <hr>
+        `;
+
+        container.appendChild(div);
+    });
+
+    // Handle Save Changes
+    const forms = document.querySelectorAll(".edit-service-form");
+    forms.forEach((form, idx) => {
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+            const updatedService = {
+                name: form.name.value,
+                description: form.desc.value,
+                price: parseFloat(form.price.value),
+                photo: form.photo.value
+            };
+            services[idx] = updatedService;
+            localStorage.setItem("yamam_services", JSON.stringify(services));
+            alert("Service updated successfully!");
+            loadEditServices(); // Refresh forms
+        });
+    });
+
+    // Handle Delete
+    const deleteButtons = document.querySelectorAll(".button-delete");
+    deleteButtons.forEach(btn => {
+        btn.addEventListener("click", function(){
+            const idx = this.getAttribute("data-index");
+            if(confirm("Are you sure you want to delete this service?")){
+                services.splice(idx, 1);
+                localStorage.setItem("yamam_services", JSON.stringify(services));
+                loadEditServices(); // Refresh
+            }
+        });
+    });
+}
+
+window.onload = loadEditServices;
+</script>
 
 </body>
 </html>
