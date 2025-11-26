@@ -85,7 +85,7 @@
       background-color: var(--sage-dark);
       color: white;
     }
-	<!--
+
     /* --- Header Styling --- */
     .header-buttons a {
       padding: 10px 18px;
@@ -94,13 +94,16 @@
       font-weight: 600;
       margin-left: 10px;
     }
-	
 
     .btn-filled {
       background-color: var(--sage-dark);
       color: white;
     }
-	-->
+
+    .btn-outline-header {
+      border: 2px solid var(--sage-dark);
+      color: var(--sage-dark);
+    }
 
     /* --- Headline --- */
     .headline-text {
@@ -121,85 +124,168 @@
       color: #555;
       line-height: 1.7;
     }
+
+    /* --- Filter Dropdown --- */
+    .filter-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+      margin: 0 0 20px 40px;
+    }
+
+    #filterToggle {
+      display: none;
+    }
+
+    .filter-btn {
+      background-color: #fff;
+      border: 2px solid var(--sage-dark);
+      color: var(--sage-dark);
+      font-weight: 600;
+      border-radius: 25px;
+      padding: 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      background-color: var(--sage-dark);
+      color: white;
+    }
+
+    .filter-dropdown {
+      display: none;
+      position: absolute;
+      top: 45px;
+      left: 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 10;
+      overflow: hidden;
+      width: 190px;
+      padding: 10px 0;
+    }
+
+    #filterToggle:checked + label + .filter-dropdown {
+      display: block;
+    }
+
+    .filter-dropdown label {
+      display: block;
+      padding: 10px 15px;
+      cursor: pointer;
+      color: var(--sage-dark);
+      font-size: 0.95rem;
+      transition: background 0.2s ease;
+    }
+
+    .filter-dropdown label:hover {
+      background: #f5f5f5;
+    }
+
+    .filter-dropdown input[type="radio"] {
+      display: none;
+    }
+
+    .filter-dropdown input[type="radio"]:checked + label {
+      background: var(--sage-dark);
+      color: #fff;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-<header class="main-header">
+  <header class="main-header">
     <div class="top-bar">
-        <div class="logo">
-            <a href="index.html"><img src="logo.jpg" alt="Yamam Spa Logo"></a>
-        </div>
-        <span class="logo-text">YAMAM SPA</span>
-        <div class="header-buttons">
-            
-            <a href="about.html" class="btn-filled">Join Now</a>
-        </div>
+      <div class="logo">
+        <img src="logo.jpg" alt="Yamam Spa Logo">
+      </div>
+      <span class="logo-text">YAMAM SPA</span>
+      <div class="header-buttons">
+        <a href="index.html" class="btn-outline-header">Home</a>
+        <a href="#" class="btn-filled">Join Now</a>
+      </div>
     </div>
-  
-  <nav class="navbar">
-    <ul>
-      <li><a href="dashboard.html">Service Provider</a></li>
-      <li><a href="Customer.html">Customer</a></li>
-      <li><a href="services.html" class="active">Services</a></li>
-      <li><a href="Quiz.html">The Beauty Lab</a></li>
-      <li><a href="about.html">About Us</a></li>
-    </ul>
-  </nav>
-</header>
 
-  <!-- Breadcrumb -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="dashboard.html">Service Provider</a></li>
+        <li><a href="customer.html">Customer</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="beautylab.html">The Beauty Lab</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <div class="breadcrumbs">Home › Services</div>
 
-  <!-- Main Content -->
   <main class="main-content">
     <section class="headline">
       <div class="headline-text">
         <h2>Our Services</h2>
-        <p>At Yamam Spa, we provide a holistic beauty and wellness experience designed to nurture both body and mind. Our services combine relaxation, rejuvenation, and elegance—delivered with exceptional care and attention to detail.</p>
+        <p>At Yamam Spa, we provide a holistic beauty and wellness experience designed to nurture both body and mind.</p>
       </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="services" style="padding: 40px 20px;">
-      <div class="services-grid">
+    <div class="filter-wrapper">
+      <input type="checkbox" id="filterToggle">
+      <label for="filterToggle" class="filter-btn">Filter</label>
 
-        <!-- Service 1: Scalp Detox -->
+      <div class="filter-dropdown">
+        <input type="radio" id="price-low" name="filter" value="priceASC">
+        <label for="price-low">Price: Low to High</label>
+
+        <input type="radio" id="price-high" name="filter" value="priceDESC">
+        <label for="price-high">Price: High to Low</label>
+
+        <input type="radio" id="az" name="filter" value="nameASC">
+        <label for="az">A → Z</label>
+
+        <input type="radio" id="za" name="filter" value="nameDESC">
+        <label for="za">Z → A</label>
+      </div>
+    </div>
+
+    <section class="services" style="padding: 40px 20px;">
+      <div class="services-grid" id="servicesGrid">
+
         <article class="service-card" data-price="120" data-name="Scalp Detox">
-          <img src="hair.PNG" alt="Scalp Detox service image">
+          <img src="hair.PNG">
           <div class="service-body">
             <div class="service-title">Scalp Detox</div>
-            <div class="service-desc">Deep scalp detox to remove all impurities including a hydration mask to restore hair softness.</div>
+            <div class="service-desc">Deep scalp detox to remove all impurities.</div>
             <div class="service-footer">
               <div class="price">SAR 120</div>
-<a href="Booking.html?service=scalp" class="btn-outline">Book</a>
+              <a href="#" class="btn-outline">Book</a>
             </div>
           </div>
         </article>
 
-        <!-- Service 2: Manicure & Pedicure -->
         <article class="service-card" data-price="250" data-name="Manicure & Pedicure">
-          <img src="nails.png" alt="Manicure Pedicure service image">
+          <img src="nails.png">
           <div class="service-body">
             <div class="service-title">Manicure & Pedicure</div>
-            <div class="service-desc">Manicure and pedicure service for clean and healthy nails at the hands of professionals.</div>
+            <div class="service-desc">Professional nail care for hands and feet.</div>
             <div class="service-footer">
               <div class="price">SAR 250</div>
-<a href="Booking.html?service=nails" class="btn-outline">Book</a>
+              <a href="#" class="btn-outline">Book</a>
             </div>
           </div>
         </article>
 
-        <!-- Service 3: Relaxing Massage -->
         <article class="service-card" data-price="230" data-name="Relaxing Massage">
-          <img src="massage.jpg" alt="Relaxing Massage service image">
+          <img src="massage.jpg">
           <div class="service-body">
             <div class="service-title">Relaxing Massage</div>
-            <div class="service-desc">60-minute relaxation massage using warm aromatic oils offered by skilled massage therapist.</div>
+            <div class="service-desc">60-minute full-body relaxation massage.</div>
             <div class="service-footer">
               <div class="price">SAR 230</div>
-<a href="Booking.html?service=massage" class="btn-outline">Book</a>
+              <a href="#" class="btn-outline">Book</a>
             </div>
           </div>
         </article>
@@ -208,22 +294,46 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-left">
       <h3>YAMAM SPA</h3>
-      <p>Your sanctuary for relaxation, beauty, and wellness. Indulge in massages, facials, hair care, and nail services designed to refresh your mind and body.</p>
+      <p>Your sanctuary for relaxation, beauty, and wellness.</p>
     </div>
-    <div class="footer-right">
-      <h4>Contact Us</h4>
-      <ul>
-        <li>Email: info@yamamspa.com</li>
-        <li>Phone: +966 555 123 456</li>
-        <li>Address: Riyadh, Saudi Arabia</li>
-      </ul>
-    </div>
-    <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
   </footer>
-<script defer src="theme.js"></script>
+
+  <!-- SORTING JAVASCRIPT -->
+  <script>
+    const grid = document.getElementById("servicesGrid");
+    let services = Array.from(document.querySelectorAll(".service-card"));
+
+    function updateGrid(items) {
+      grid.innerHTML = "";
+      items.forEach(item => grid.appendChild(item));
+    }
+
+    // Add event listeners for each radio input
+    document.querySelectorAll(".filter-dropdown input[type='radio']").forEach(radio => {
+      radio.addEventListener("change", function() {
+        let sorted = [...services];
+        let type = this.value;
+
+        if (type === "priceASC") {
+          sorted.sort((a, b) => a.dataset.price - b.dataset.price);
+        }
+        else if (type === "priceDESC") {
+          sorted.sort((a, b) => b.dataset.price - a.dataset.price);
+        }
+        else if (type === "nameASC") {
+          sorted.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+        }
+        else if (type === "nameDESC") {
+          sorted.sort((a, b) => b.dataset.name.localeCompare(a.dataset.name));
+        }
+
+        updateGrid(sorted);
+      });
+    });
+  </script>
+
 </body>
 </html>
