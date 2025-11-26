@@ -15,27 +15,25 @@
         </div>
         <span class="logo-text">YAMAM SPA</span>
         <div class="header-buttons">
-            
             <a href="about.html" class="btn-filled">Join Now</a>
         </div>
     </div>
 
     <nav class="navbar">
       <ul>
-                <li><a href="dashboard.html">Service Provider</a></li>
-                <li><a href="Customer.html">Customer</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="Quiz.html">The Beauty Lab</a></li>
-                <li><a href="about.html">About Us</a></li>
+        <li><a href="dashboard.html">Service Provider</a></li>
+        <li><a href="Customer.html">Customer</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Quiz.html">The Beauty Lab</a></li>
+        <li><a href="about.html">About Us</a></li>
       </ul>
     </nav>
-  </header>
+</header>
 
-  <!-- Breadcrumb -->
-  <div class="breadcrumbs">Home › Dashboard › Add New Service</div>
+<!-- Breadcrumb -->
+<div class="breadcrumbs">Home › Dashboard › Add New Service</div>
 
-  <!-- Main Content -->
-  <main class="main-content">
+<main class="main-content">
     <section class="headline">
       <div class="headline-text">
         <h2>Add a New Service</h2>
@@ -53,7 +51,7 @@
 
         <div class="form-row">
           <label for="service-photo">Service Photo</label>
-          <input id="service-photo" name="service_photo" type="file" accept="image/*">
+          <input id="service-photo" name="service_photo" type="file" accept="image/*" required>
         </div>
 
         <div class="form-row">
@@ -72,14 +70,14 @@
 
       </form>
     </section>
-  </main>
+</main>
 
-  <!-- Footer -->
-  <footer>
+<footer>
     <div class="footer-left">
       <h3>YAMAM SPA</h3>
-      <p>Your sanctuary for relaxation, beauty, and wellness. Indulge in massages, facials, hair care, and makeup services designed to refresh your mind and body.</p>
+      <p>Your sanctuary for relaxation, beauty, and wellness.</p>
     </div>
+
     <div class="footer-right">
       <h4>Contact Us</h4>
       <ul>
@@ -88,8 +86,45 @@
         <li>Address: Riyadh, Saudi Arabia</li>
       </ul>
     </div>
+
     <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
-  </footer>
+</footer>
+
+<script>
+document.getElementById("add-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("service-name").value;
+    const price = document.getElementById("service-price").value;
+    const desc = document.getElementById("service-desc").value;
+    const photoInput = document.getElementById("service-photo").files[0];
+
+    const reader = new FileReader();
+    reader.onload = function() {
+        const imageURL = reader.result;
+
+        const newService = {
+            name: name,
+            price: parseFloat(price),
+            description: desc,
+            photo: imageURL
+        };
+
+        let services = JSON.parse(localStorage.getItem("yamam_services")) || [];
+        services.push(newService);
+        localStorage.setItem("yamam_services", JSON.stringify(services));
+
+        alert("Service added successfully!");
+        window.location.href = "dashboard.html";
+    };
+
+    if(photoInput) {
+        reader.readAsDataURL(photoInput);
+    } else {
+        alert("Please upload a photo.");
+    }
+});
+</script>
 
 </body>
 </html>
