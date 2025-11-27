@@ -94,10 +94,26 @@
 document.getElementById("add-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const name = document.getElementById("service-name").value;
-    const price = document.getElementById("service-price").value;
-    const desc = document.getElementById("service-desc").value;
+    const name = document.getElementById("service-name").value.trim();
+    const price = document.getElementById("service-price").value.trim();
+    const desc = document.getElementById("service-desc").value.trim();
     const photoInput = document.getElementById("service-photo").files[0];
+
+    // Validation
+    if(!name || !price || !desc || !photoInput){
+        alert("Please fill in all fields and upload a photo.");
+        return;
+    }
+
+    if(/^\d/.test(name)){
+        alert("Service name cannot start with a number.");
+        return;
+    }
+
+    if(isNaN(price) || parseFloat(price) < 0){
+        alert("Price must be a positive number.");
+        return;
+    }
 
     const reader = new FileReader();
     reader.onload = function() {
@@ -110,19 +126,16 @@ document.getElementById("add-form").addEventListener("submit", function(e) {
             photo: imageURL
         };
 
+        // Retrieve existing services
         let services = JSON.parse(localStorage.getItem("yamam_services")) || [];
         services.push(newService);
         localStorage.setItem("yamam_services", JSON.stringify(services));
 
-        alert("Service added successfully!");
-        window.location.href = "dashboard.html";
+        alert(`Service "${name}" added successfully!`);
+        document.getElementById("add-form").reset();
     };
 
-    if(photoInput) {
-        reader.readAsDataURL(photoInput);
-    } else {
-        alert("Please upload a photo.");
-    }
+    reader.readAsDataURL(photoInput);
 });
 </script>
 
