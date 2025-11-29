@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluate Manicure & Pedicure - Yamam Spa</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root { --sage-green: #6b8b75; --sage-dark: #56745e; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f8f9f8; margin: 0; padding: 0; }
+    main { max-width: 600px; margin: 40px auto; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
+    img.service-img { width: 160px; border-radius: 10px; margin-bottom: 15px; }
+    h2 { color: var(--sage-dark); margin-bottom: 10px; }
+    p { color: #555; margin-bottom: 15px; }
+    .rating { direction: rtl; unicode-bidi: bidi-override; display: inline-block; margin-bottom: 20px; }
+    .rating input { display: none; }
+    .rating label { font-size: 2rem; color: #ccc; cursor: pointer; transition: color 0.2s ease; }
+    .rating label:hover, .rating label:hover ~ label, .rating input:checked ~ label { color: #f5b301; }
+    textarea { width: 100%; border-radius: 8px; border: 1px solid #ccc; padding: 10px; resize: none; margin-top: 10px; }
+    .btn-filled { background-color: var(--sage-dark); color: white; border: none; border-radius: 25px; padding: 10px 25px; margin-top: 15px; cursor: pointer; transition: background-color 0.3s ease; text-decoration: none; display: inline-block; font-size: 1rem; }
+    .btn-filled:hover { background-color: var(--sage-green); }
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="top-bar">
+        <div class="logo">
+            <a href="index.html"><img src="logo.jpg" alt="Yamam Spa Logo"></a>
+        </div>
+        <span class="logo-text">YAMAM SPA</span>
+        <div class="header-buttons">
+            
+            <a href="about.html" class="btn-filled">Join Now</a>
+        </div>
+    </div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="dashboard.html">Service Provider</a></li>
+      <li><a href="Customer.html">Customer</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="Quiz.html">The Beauty Lab</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+</header>
+  <div class="breadcrumbs"> Customer › previous order › Evaluate </div>
+
+<main>
+  <h2>Evaluate Manicure & Pedicure</h2>
+  <img src="serviceNails.jpg" alt="Manicure & Pedicure" class="service-img">
+  <p>How was your experience with our Manicure & Pedicure service?</p>
+  <form action="evaluation_done.html" method="get">
+    <div class="rating">
+      <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+      <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+      <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+      <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+      <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+    </div>
+    <label for="feedback"><strong>Your Feedback:</strong></label>
+    <textarea id="feedback" name="feedback" rows="4" placeholder="Share your thoughts..." required></textarea>
+    <button type="submit" class="btn-filled">Submit</button>
+  </form>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <h3>YAMAM SPA</h3>
+    <p>Your sanctuary for relaxation, beauty, and wellness. Indulge in massages, facials, and hair treatments designed to refresh your mind and body.</p>
+  </div>
+  <div class="footer-right">
+    <h4>Contact Us</h4>
+    <ul>
+      <li>Email: info@yamamspa.com</li>
+      <li>Phone: +966 555 123 456</li>
+      <li>Address: Riyadh, Saudi Arabia</li>
+    </ul>
+  </div>
+  <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
+</footer>
+  <script defer src="theme.js"></script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamam Spa - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+<header class="main-header">
+    <div class="top-bar">
+        <div class="logo">
+            <a href="index.html"><img src="logo.jpg" alt="Yamam Spa Logo"></a>
+        </div>
+        <span class="logo-text">YAMAM SPA</span>
+        <div class="header-buttons">
+            
+            <a href="about.html" class="btn-filled">Join Now</a>
+        </div>
+    </div>
+
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="dashboard.html">Service Provider</a></li>
+                <li><a href="Customer.html">Customer</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Quiz.html">The Beauty Lab</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Headline Section -->
+
+    <section class="headlineQuiz">
+        <div class="headline-Quiz">
+            <h2>personalized Style Quiz!.</h2>
+            <p>Discover which beauty personality matches you best!
+Answer a few quick questions about your preferences and habits.
+and we’ll reveal your personalized spa and salon style with service recommendations made just for you.</p>
+          
+        </div>
+        <div class="Quizimge">
+            <img src="QuizIMG.png" alt="Quiz style">
+        </div>
+    </section>
+<form id="styleQuiz" class="quiz">
+
+  <!-- Global legend / scale -->
+  <div class="quiz-row quiz-legend">
+      <div class="quiz-question">Answer scale:</div>
+      <div class="quiz-options">
+          <span>0<br>Disagree</span>
+          <span>1<br>Slightly Disagree</span>
+          <span>2<br>Neutral</span>
+          <span>3<br>Slightly Agree</span>
+          <span>4<br>Agree</span>
+      </div>
+  </div>
+
+  <!-- Section 1 -->
+  <fieldset>
+    <legend>Personality & Preferences</legend>
+    <div class="quiz-row">
+      <div class="quiz-question">Natural Beauty: I prefer a simple, natural look that feels authentic.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s1_natural" value="0"></label>
+        <label>1<input type="radio" name="s1_natural" value="1"></label>
+        <label>2<input type="radio" name="s1_natural" value="2"></label>
+        <label>3<input type="radio" name="s1_natural" value="3"></label>
+        <label>4<input type="radio" name="s1_natural" value="4"></label>
+      </div>
+    </div>
+    <div class="quiz-row">
+      <div class="quiz-question">Trend Setter: I love changing my style and keeping up with trends.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s1_trend" value="0"></label>
+        <label>1<input type="radio" name="s1_trend" value="1"></label>
+        <label>2<input type="radio" name="s1_trend" value="2"></label>
+        <label>3<input type="radio" name="s1_trend" value="3"></label>
+        <label>4<input type="radio" name="s1_trend" value="4"></label>
+      </div>
+    </div>
+    <div class="quiz-row">
+      <div class="quiz-question">Relaxation Lover: I value peace and self-care over fashion.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s1_relax" value="0"></label>
+        <label>1<input type="radio" name="s1_relax" value="1"></label>
+        <label>2<input type="radio" name="s1_relax" value="2"></label>
+        <label>3<input type="radio" name="s1_relax" value="3"></label>
+        <label>4<input type="radio" name="s1_relax" value="4"></label>
+      </div>
+    </div>
+    <div class="quiz-row">
+      <div class="quiz-question">Glam Queen: I feel best when I look polished and glamorous.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s1_glam" value="0"></label>
+        <label>1<input type="radio" name="s1_glam" value="1"></label>
+        <label>2<input type="radio" name="s1_glam" value="2"></label>
+        <label>3<input type="radio" name="s1_glam" value="3"></label>
+        <label>4<input type="radio" name="s1_glam" value="4"></label>
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Section 2 -->
+  <fieldset>
+    <legend>Hair & Beauty Habits</legend>
+    <div class="quiz-row">
+      <div class="quiz-question">Natural Beauty: I focus on keeping my hair and skin healthy using natural products.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s2_natural" value="0"></label>
+        <label>1<input type="radio" name="s2_natural" value="1"></label>
+        <label>2<input type="radio" name="s2_natural" value="2"></label>
+        <label>3<input type="radio" name="s2_natural" value="3"></label>
+        <label>4<input type="radio" name="s2_natural" value="4"></label>
+      </div>
+    </div>
+    <div class="quiz-row">
+      <div class="quiz-question">Trend Setter: I enjoy trying bold hair colors or trendy cuts.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s2_trend" value="0"></label>
+        <label>1<input type="radio" name="s2_trend" value="1"></label>
+        <label>2<input type="radio" name="s2_trend" value="2"></label>
+        <label>3<input type="radio" name="s2_trend" value="3"></label>
+        <label>4<input type="radio" name="s2_trend" value="4"></label>
+      </div>
+    </div>
+    <div class="quiz-row">
+      <div class="quiz-question">Relaxation Lover: I visit the salon mainly to relax, not to change my look.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s2_relax" value="0"></label>
+        <label>1<input type="radio" name="s2_relax" value="1"></label>
+        <label>2<input type="radio" name="s2_relax" value="2"></label>
+        <label>3<input type="radio" name="s2_relax" value="3"></label>
+        <label>4<input type="radio" name="s2_relax" value="4"></label>
+      </div>
+    </div>
+    <div class="quiz-row">
+      <div class="quiz-question">Glam Queen: I like professional styling and treatments that make me feel special.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s2_glam" value="0"></label>
+        <label>1<input type="radio" name="s2_glam" value="1"></label>
+        <label>2<input type="radio" name="s2_glam" value="2"></label>
+        <label>3<input type="radio" name="s2_glam" value="3"></label>
+        <label>4<input type="radio" name="s2_glam" value="4"></label>
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Section 3 -->
+  <fieldset>
+    <legend>Spa & Self-Care</legend>
+    <div class="quiz-row">
+      <div class="quiz-question">Natural Beauty: I enjoy gentle, organic spa treatments.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s3_natural" value="0"></label>
+        <label>1<input type="radio" name="s3_natural" value="1"></label>
+        <label>2<input type="radio" name="s3_natural" value="2"></label>
+        <label>3<input type="radio" name="s3_natural" value="3"></label>
+        <label>4<input type="radio" name="s3_natural" value="4"></label>
+      </div>
+    </div>
+    <div class="quiz-row">
+      <div class="quiz-question">Trend Setter: I’m open to new spa trends or beauty technologies.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s3_trend" value="0"></label>
+        <label>1<input type="radio" name="s3_trend" value="1"></label>
+        <label>2<input type="radio" name="s3_trend" value="2"></label>
+        <label>3<input type="radio" name="s3_trend" value="3"></label>
+        <label>4<input type="radio" name="s3_trend" value="4"></label>
+      </div>
+    </div>
+    <div class="quiz-row">
+      <div class="quiz-question">Relaxation Lover: I go to the spa to disconnect and recharge.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s3_relax" value="0"></label>
+        <label>1<input type="radio" name="s3_relax" value="1"></label>
+        <label>2<input type="radio" name="s3_relax" value="2"></label>
+        <label>3<input type="radio" name="s3_relax" value="3"></label>
+        <label>4<input type="radio" name="s3_relax" value="4"></label>
+      </div>
+    </div>
+    <div class="quiz-row">
+      <div class="quiz-question">Glam Queen: I see spa visits as a luxury experience I deserve.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s3_glam" value="0"></label>
+        <label>1<input type="radio" name="s3_glam" value="1"></label>
+        <label>2<input type="radio" name="s3_glam" value="2"></label>
+        <label>3<input type="radio" name="s3_glam" value="3"></label>
+        <label>4<input type="radio" name="s3_glam" value="4"></label>
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Section 4 -->
+  <fieldset>
+    <legend>Lifestyle & Choices</legend>
+    <div class="quiz-row">
+      <div class="quiz-question">Natural Beauty: I prefer eco-friendly, sustainable beauty options.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s4_natural" value="0"></label>
+        <label>1<input type="radio" name="s4_natural" value="1"></label>
+        <label>2<input type="radio" name="s4_natural" value="2"></label>
+        <label>3<input type="radio" name="s4_natural" value="3"></label>
+        <label>4<input type="radio" name="s4_natural" value="4"></label>
+      </div>
+    </div>
+    <div class="quiz-row">
+      <div class="quiz-question">Trend Setter: I love experimenting and sharing my looks on social media.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s4_trend" value="0"></label>
+        <label>1<input type="radio" name="s4_trend" value="1"></label>
+        <label>2<input type="radio" name="s4_trend" value="2"></label>
+        <label>3<input type="radio" name="s4_trend" value="3"></label>
+        <label>4<input type="radio" name="s4_trend" value="4"></label>
+      </div>
+    </div>
+    <div class="quiz-row">
+      <div class="quiz-question">Relaxation Lover: I’d choose calm and quiet over a busy salon.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s4_relax" value="0"></label>
+        <label>1<input type="radio" name="s4_relax" value="1"></label>
+        <label>2<input type="radio" name="s4_relax" value="2"></label>
+        <label>3<input type="radio" name="s4_relax" value="3"></label>
+        <label>4<input type="radio" name="s4_relax" value="4"></label>
+      </div>
+    </div>
+    <div class="quiz-row">
+      <div class="quiz-question">Glam Queen: I’m willing to spend more for high-quality, premium services.</div>
+      <div class="quiz-options">
+        <label>0<input type="radio" name="s4_glam" value="0"></label>
+        <label>1<input type="radio" name="s4_glam" value="1"></label>
+        <label>2<input type="radio" name="s4_glam" value="2"></label>
+        <label>3<input type="radio" name="s4_glam" value="3"></label>
+        <label>4<input type="radio" name="s4_glam" value="4"></label>
+      </div>
+    </div>
+  </fieldset>
+
+  <button type="submit" class="quiz-submit">Submit</button>
+  <p class="quiz-note">Submit to see your personalized spa and beauty service recommendations!</p>
+</form>
+
+<div id="result"></div>
+
+
+<hr>
+    <!-- Footer -->
+   <footer>
+    <div class="footer-left">
+        <h3>YAMAM SPA</h3>
+        <p>Your sanctuary for relaxation, beauty, and wellness. Indulge in massages, facials, hair care, and makeup services designed to refresh your mind and body.</p>
+    </div>
+    <div class="footer-right">
+        <h4>Contact Us</h4>
+        <ul>
+            <li>Email: info@yamamspa.com</li>
+            <li>Phone: +966 555 123 456</li>
+            <li>Address: Riyadh, Saudi Arabia</li>
+        </ul>
+    </div>
+    <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
+</footer>
+
+<script defer src="theme.js"></script>
+<script src="quiz.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluate Service - Yamam Spa</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root { --sage-green: #6b8b75; --sage-dark: #56745e; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f8f9f8; margin: 0; padding: 0; }
+
+    main {
+      max-width: 650px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    img.service-img {
+      width: 180px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .rating {
+      direction: rtl;
+      unicode-bidi: bidi-override;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .rating input { display: none; }
+    .rating label {
+      font-size: 2rem;
+      color: #ccc;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .rating label:hover,
+    .rating label:hover ~ label,
+    .rating input:checked ~ label {
+      color: #f5b301;
+    }
+
+    textarea {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      resize: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="top-bar">
+        <div class="logo"><a href="index.html"><img src="logo.jpg"></a></div>
+        <span class="logo-text">YAMAM SPA</span>
+		
+        <div class="header-buttons">
+            
+            <a href="about.html" class="btn-filled">Join Now</a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="dashboard.html">Service Provider</a></li>
+        <li><a href="Customer.html" class="active">Customer</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Quiz.html">The Beauty Lab</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+</header>
+
+<div class="breadcrumbs">Customer › Previous Orders › Evaluate</div>
+
+<main>
+  <h2 id="serviceTitle"></h2>
+  <img id="serviceImage" class="service-img">
+
+  <form id="evalForm">
+
+    <div class="rating">
+      <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+      <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+      <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+      <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+      <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+    </div>
+
+    <textarea id="feedback" rows="4" placeholder="Write your feedback..." required></textarea>
+
+    <br><br>
+    <button type="submit" class="btn-filled">Submit</button>
+
+  </form>
+</main>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const selected = params.get("service");
+
+  const data = {
+    massage: { title:"Relaxing Massage", img:"serviceMAS.jpg" },
+    facial:  { title:"Facial Treatment", img:"serviceFace.jpg" },
+    nails:   { title:"Manicure & Pedicure", img:"serviceNails.jpg" }
+  };
+
+  document.getElementById("serviceTitle").textContent = data[selected].title;
+  document.getElementById("serviceImage").src = data[selected].img;
+
+  const form = document.getElementById("evalForm");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const rating = document.querySelector("input[name='rating']:checked");
+    if (!rating) {
+      alert("Please select a rating.");
+      return;
+    }
+
+    const value = parseInt(rating.value);
+
+    if (value >= 4) {
+      alert("Thank you for your positive feedback! 🌸");
+    } else if (value <= 2) {
+      alert("We’re sorry for the inconvenience. We will improve! 💗");
+    } else {
+      alert("Thank you for your feedback!");
+    }
+
+    window.location.href = "dashboard.html";
+  });
+</script>
+
+<footer>
+  <div class="footer-left">
+    <h3>YAMAM SPA</h3>
+    <p>Your sanctuary for relaxation, beauty, and wellness.</p>
+  </div>
+  <div class="footer-right">
+    <h4>Contact Us</h4>
+    <ul>
+      <li>Email: info@yamamspa.com</li>
+      <li>Phone: +966 555 123 456</li>
+      <li>Address: Riyadh, Saudi Arabia</li>
+    </ul>
+  </div>
+  <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
+</footer>
+	<script defer src="theme.js"></script>
+</body>
+</html>
+

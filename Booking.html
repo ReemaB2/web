@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking - Yamam Spa</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root { --sage-green: #6b8b75; --sage-dark: #56745e; }
+    body { background-color: #f8f9f8; font-family: 'Poppins', sans-serif; }
+
+    .booking-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .service-info { text-align: center; }
+    .service-info img { width: 280px; border-radius: 15px; margin-bottom: 15px; }
+    .service-info h2 { color: var(--sage-dark); margin-bottom: 8px; }
+    .service-info p { color: #666; font-size: 0.95rem; line-height: 1.5; margin: 5px 0; }
+
+    form label { font-weight: 600; color: var(--sage-dark); }
+    form input, form textarea {
+      width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;
+      margin-top: 5px; margin-bottom: 15px; font-size: 0.95rem;
+    }
+
+    iframe {
+      border-radius: 10px; width: 100%; height: 250px; margin-bottom: 15px;
+    }
+
+    .btn-filled {
+      background-color: var(--sage-dark);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn-filled:hover { background-color: var(--sage-green); }
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="top-bar">
+      <div class="logo">
+          <a href="index.html"><img src="logo.jpg" alt="Yamam Spa Logo"></a>
+      </div>
+      <span class="logo-text">YAMAM SPA</span>
+      <div class="header-buttons">
+          <a href="about.html" class="btn-filled">Join Now</a>
+      </div>
+    </div>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="dashboard.html">Service Provider</a></li>
+      <li><a href="Customer.html">Customer</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="Quiz.html">The Beauty Lab</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="breadcrumbs"> Services › Booking </div>
+
+<div class="booking-container">
+  <div class="service-info">
+    <img id="service-img" src="" alt="Service Image">
+    <h2 id="service-title"></h2>
+    <p><strong id="service-price"></strong></p>
+    <p id="service-desc"></p>
+  </div>
+
+  <div class="form-section">
+    <form id="bookingForm">
+      <label>Name:</label>
+      <input type="text" placeholder="Enter your name" required>
+
+      <label>Phone Number:</label>
+      <input type="tel" placeholder="05xxxxxxxx" required>
+
+      <label>Description / Note:</label>
+      <textarea rows="3" placeholder="Any special request?"></textarea>
+
+      <label>Date:</label>
+      <input type="date" required>
+
+      <label>Time:</label>
+      <input type="time" required>
+
+      <label>Map:</label>
+      <iframe src="https://maps.google.com/maps?q=Riyadh&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+      <button type="submit" class="btn-filled">Book Now</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Read selected service from URL
+  const params = new URLSearchParams(window.location.search);
+  const selected = params.get("service");
+
+  // Service data
+  const services = {
+    scalp: {
+      img: "hair.PNG",
+      title: "Scalp Detox",
+      price: "Price: SAR 120",
+      desc: "Deep scalp detox to remove all impurities and hydrate your hair for lasting softness and shine."
+    },
+    nails: {
+      img: "nails.png",
+      title: "Manicure & Pedicure",
+      price: "Price: SAR 250",
+      desc: "Relaxing manicure and pedicure treatment for clean, soft, and healthy nails."
+    },
+    massage: {
+      img: "massage.jpg",
+      title: "Relaxing Massage",
+      price: "Price: SAR 230",
+      desc: "Full body massage using warm aromatic oils for deep relaxation."
+    }
+  };
+
+  const data = services[selected];
+
+  if (data) {
+    document.getElementById("service-img").src = data.img;
+    document.getElementById("service-title").textContent = data.title;
+    document.getElementById("service-price").textContent = data.price;
+    document.getElementById("service-desc").textContent = data.desc;
+  }
+
+  // Handle booking submit
+  const form = document.getElementById("bookingForm");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // Stop normal submit
+
+const confirmBooking = confirm("Your booking is complete! ✨\n\nWould you like to go back to the homepage?");
+
+    if (confirmBooking) {
+      window.location.href = "index.html"; // home page
+    } else {
+      window.location.href = "dashboard.html"; // dashboard
+    }
+  });
+</script>
+<script defer src="theme.js"></script>
+<footer>
+  <div class="footer-left">
+    <h3>YAMAM SPA</h3>
+    <p>Your sanctuary for relaxation, beauty, and wellness.</p>
+  </div>
+  <div class="footer-right">
+    <h4>Contact Us</h4>
+    <ul>
+      <li>Email: info@yamamspa.com</li>
+      <li>Phone: +966 555 123
+

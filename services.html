@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Yamam Spa</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --sage-green: #6b8b75;
+      --sage-dark: #56745e;
+    }
+
+    /* --- Image and Card Styling --- */
+    .service-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .service-card {
+      max-width: 420px;
+      margin: 20px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      background-color: #fff;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 40px;
+      justify-items: center;
+    }
+
+    .service-body {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .service-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--sage-dark);
+      margin-bottom: 8px;
+    }
+
+    .service-desc {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .service-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: var(--sage-dark);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--sage-dark);
+      color: var(--sage-dark);
+      padding: 6px 14px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--sage-dark);
+      color: white;
+    }
+
+    /* --- Header Styling --- */
+    .header-buttons a {
+      padding: 10px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .btn-filled {
+      background-color: var(--sage-dark);
+      color: white;
+    }
+
+    .btn-outline-header {
+      border: 2px solid var(--sage-dark);
+      color: var(--sage-dark);
+    }
+
+    /* --- Headline --- */
+    .headline-text {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .headline-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: var(--sage-dark);
+    }
+
+    .headline-text p {
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* --- Filter Dropdown --- */
+    .filter-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+      margin: 0 0 20px 40px;
+    }
+
+    #filterToggle {
+      display: none;
+    }
+
+    .filter-btn {
+      background-color: #fff;
+      border: 2px solid var(--sage-dark);
+      color: var(--sage-dark);
+      font-weight: 600;
+      border-radius: 25px;
+      padding: 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      background-color: var(--sage-dark);
+      color: white;
+    }
+
+    .filter-dropdown {
+      display: none;
+      position: absolute;
+      top: 45px;
+      left: 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 10;
+      overflow: hidden;
+      width: 190px;
+      padding: 10px 0;
+    }
+
+    #filterToggle:checked + label + .filter-dropdown {
+      display: block;
+    }
+
+    .filter-dropdown label {
+      display: block;
+      padding: 10px 15px;
+      cursor: pointer;
+      color: var(--sage-dark);
+      font-size: 0.95rem;
+      transition: background 0.2s ease;
+    }
+
+    .filter-dropdown label:hover {
+      background: #f5f5f5;
+    }
+
+    .filter-dropdown input[type="radio"] {
+      display: none;
+    }
+
+    .filter-dropdown input[type="radio"]:checked + label {
+      background: var(--sage-dark);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+<header class="main-header">
+    <div class="top-bar">
+        <div class="logo">
+            <a href="index.html"><img src="logo.jpg" alt="Yamam Spa Logo"></a>
+        </div>
+        <span class="logo-text">YAMAM SPA</span>
+
+        <div class="header-buttons">
+            <a href="about.html" class="btn-filled">Join Now</a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="dashboard.html">Service Provider</a></li>
+        <li><a href="Customer.html">Customer</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Quiz.html">The Beauty Lab</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+</header>
+
+    
+
+  <div class="breadcrumbs">Home › Services</div>
+
+  <main class="main-content">
+    <section class="headline">
+      <div class="headline-text">
+        <h2>Our Services</h2>
+        <p>At Yamam Spa, we provide a holistic beauty and wellness experience designed to nurture both body and mind.</p>
+      </div>
+    </section>
+
+    <div class="filter-wrapper">
+      <input type="checkbox" id="filterToggle">
+      <label for="filterToggle" class="filter-btn">Filter</label>
+
+      <div class="filter-dropdown">
+        <input type="radio" id="price-low" name="filter" value="priceASC">
+        <label for="price-low">Price: Low to High</label>
+
+        <input type="radio" id="price-high" name="filter" value="priceDESC">
+        <label for="price-high">Price: High to Low</label>
+
+        <input type="radio" id="az" name="filter" value="nameASC">
+        <label for="az">A → Z</label>
+
+        <input type="radio" id="za" name="filter" value="nameDESC">
+        <label for="za">Z → A</label>
+      </div>
+    </div>
+
+    <section class="services" style="padding: 40px 20px;">
+      <div class="services-grid" id="servicesGrid">
+
+        <article class="service-card" data-price="120" data-name="Scalp Detox">
+          <img src="hair.PNG">
+          <div class="service-body">
+            <div class="service-title">Scalp Detox</div>
+            <div class="service-desc">Deep scalp detox to remove all impurities.</div>
+            <div class="service-footer">
+              <div class="price">SAR 120</div>
+              <a href="#" class="btn-outline">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card" data-price="250" data-name="Manicure & Pedicure">
+          <img src="nails.png">
+          <div class="service-body">
+            <div class="service-title">Manicure & Pedicure</div>
+            <div class="service-desc">Professional nail care for hands and feet.</div>
+            <div class="service-footer">
+              <div class="price">SAR 250</div>
+              <a href="#" class="btn-outline">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card" data-price="230" data-name="Relaxing Massage">
+          <img src="massage.jpg">
+          <div class="service-body">
+            <div class="service-title">Relaxing Massage</div>
+            <div class="service-desc">60-minute full-body relaxation massage.</div>
+            <div class="service-footer">
+              <div class="price">SAR 230</div>
+              <a href="#" class="btn-outline">Book</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+ <footer>
+    <div class="footer-left">
+      <h3>YAMAM SPA</h3>
+      <p>Your sanctuary for relaxation, beauty, and wellness.</p>
+    </div>
+    <div class="footer-right">
+      <h4>Contact Us</h4>
+      <ul>
+        <li>Email: info@yamamspa.com</li>
+        <li>Phone: +966 555 123 456</li>
+        <li>Address: Riyadh, Saudi Arabia</li>
+      </ul>
+    </div>
+    <p class="footer-bottom">&copy; 2025 Yamam Spa. All rights reserved.</p>
+</footer>
+
+  <!-- SORTING JAVASCRIPT -->
+  <script>
+    const grid = document.getElementById("servicesGrid");
+    let services = Array.from(document.querySelectorAll(".service-card"));
+
+    function updateGrid(items) {
+      grid.innerHTML = "";
+      items.forEach(item => grid.appendChild(item));
+    }
+
+    // Add event listeners for each radio input
+    document.querySelectorAll(".filter-dropdown input[type='radio']").forEach(radio => {
+      radio.addEventListener("change", function() {
+        let sorted = [...services];
+        let type = this.value;
+
+        if (type === "priceASC") {
+          sorted.sort((a, b) => a.dataset.price - b.dataset.price);
+        }
+        else if (type === "priceDESC") {
+          sorted.sort((a, b) => b.dataset.price - a.dataset.price);
+        }
+        else if (type === "nameASC") {
+          sorted.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+        }
+        else if (type === "nameDESC") {
+          sorted.sort((a, b) => b.dataset.name.localeCompare(a.dataset.name));
+        }
+
+        updateGrid(sorted);
+      });
+    });
+  </script>
+
+</body>
+</html>
