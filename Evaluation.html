@@ -34,27 +34,34 @@
       margin: 15px 0;
       display: none;
     }
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
 
-    .rating {
-      direction: rtl;
-      unicode-bidi: bidi-override;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
+.rating input {
+  display: none;
+}
 
-    .rating input { display: none; }
-    .rating label {
-      font-size: 2rem;
-      color: #ccc;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
+.rating label {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.2s ease;
+  display: inline-block;
+}
 
-    .rating label:hover,
-    .rating label:hover ~ label,
-    .rating input:checked ~ label {
-      color: #f5b301;
-    }
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #f5b301;
+}
+
+.rating input:checked ~ label {
+  color: #f5b301;
+}
 
     textarea {
       width: 100%;
@@ -63,6 +70,47 @@
       padding: 10px;
       resize: none;
     }
+	.dark-theme body {
+  background-color: #121212 !important;
+}
+
+.dark-theme main {
+  background: #262626 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6) !important;
+}
+
+/* Select */
+.dark-theme select {
+  background-color: #333 !important;
+  color: white !important;
+  border: 1px solid #777 !important;
+}
+
+/* Textarea */
+.dark-theme textarea {
+  background-color: #333 !important;
+  color: #fff !important;
+  border: 1px solid #777 !important;
+}
+
+/* Stars */
+.dark-theme .rating label {
+  color: #888 !important;
+}
+
+.dark-theme .rating label:hover,
+.dark-theme .rating label:hover ~ label,
+.dark-theme .rating input:checked ~ label {
+  color: #ffcd3c !important;
+}
+
+/* Button */
+.dark-theme button,
+.dark-theme .btn-filled {
+  background-color: #4C6B58 !important;
+  color: white !important;
+} او ذي بس
   </style>
 </head>
 

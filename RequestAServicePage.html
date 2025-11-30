@@ -112,12 +112,17 @@
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();
+// 1) التحقق من الاسم
+if (nameInput.value.trim() === "") {
+  alert("Please enter your name.");
+  return;
+}
 
-    // 1) التحقق من الاسم
-    if (nameInput.value.trim() === "") {
-      alert("Please enter your name.");
-      return;
-    }
+// شرط إضافي: الاسم ما يبدأ برقم
+if (/^\d/.test(nameInput.value.trim())) {
+  alert("Name cannot start with a number.");
+  return;
+}
 
     // 2) التحقق من رقم الهاتف
     const phonePattern = /^05\d{8}$/;
@@ -144,14 +149,11 @@
       alert("Please select a service.");
       return;
     }
-
-    // 6) التحقق من وصف 100 كلمة
-    const words = descriptionInput.value.trim().split(/\s+/);
-    if (words.length < 100) {
-      alert("Description must be at least 100 words.");
-      return;
-    }
-
+// 6) التحقق من وصف 100 حرف
+if (descriptionInput.value.trim().length < 100) {
+  alert("Description must be at least 100 characters.");
+  return;
+}
     // 7) تنبيه البقاء أو المغادرة
     const action = confirm("Your request has been added!\n\nPress OK to go to the dashboard or Cancel to stay here.");
 
@@ -166,13 +168,13 @@
       newRequest.style.borderRadius = "10px";
       newRequest.style.marginTop = "10px";
       newRequest.style.backgroundColor = "#f9f9f9";
-
-      newRequest.innerHTML = `
-        <h3>${serviceInput.options[serviceInput.selectedIndex].text}</h3>
-        <p><strong>Date:</strong> ${dateInput.value}</p>
-        <p><strong>Time:</strong> ${timeInput.value}</p>
-        <p><strong>Description:</strong> ${descriptionInput.value}</p>
-      `;
+newRequest.innerHTML = `
+  <h3>${serviceInput.options[serviceInput.selectedIndex].text}</h3>
+  <p><strong>Name:</strong> ${nameInput.value}</p>
+  <p><strong>Date:</strong> ${dateInput.value}</p>
+  <p><strong>Time:</strong> ${timeInput.value}</p>
+  <p><strong>Description:</strong> ${descriptionInput.value}</p>
+`;
 
       requestsContainer.appendChild(newRequest);
 
